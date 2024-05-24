@@ -12,12 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: My step
-        env:
-          ORG_SECRET: ${{ secrets.NPM_KEVIN_BOT }}
-        run: |
-          echo "My organization secret is $ORG_SECRET"
-
       - name: Intall pnpm
         uses: pnpm/action-setup@v3
         with:
