@@ -12,6 +12,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: My step
+        env:
+          ORG_SECRET: ${{ secrets.NPM_KEVIN_BOT }}
+        run: |
+          echo "My organization secret is $ORG_SECRET"
+
       - name: Intall pnpm
         uses: pnpm/action-setup@v3
         with:
@@ -23,7 +29,7 @@ jobs:
         with:
           cache: pnpm
           node-version: 20.11.1
-          # registry-url: https://registry.npmjs.org/
+          registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
         run: pnpm install
