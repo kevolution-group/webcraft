@@ -1,0 +1,36 @@
+name: Package release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Intall pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.1.1
+          run_install: false
+
+      - name: Install node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          node-version: 20.11.1
+          # registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Publish 🚀
+        shell: bash
+        run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEVIN_BOT }}
+
