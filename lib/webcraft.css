@@ -1,4 +1,72 @@
-::selection {
-  background: #f81ce5;
-  color: #fff;
+@import "tailwindcss";
+
+/*
+8: "
+  0px 5px 5px -3px rgba(0,0,0,0.2),
+  0px 8px 10px 1px rgba(0,0,0,0.14),
+  0px 3px 14px 2px rgba(0,0,0,0.12)"
+
+12: "
+  0px 7px 8px -4px rgba(0,0,0,0.2),
+  0px 12px 17px 2px rgba(0,0,0,0.14),
+  0px 5px 22px 4px rgba(0,0,0,0.12)"
+
+16: "
+  0px 8px 10px -5px rgba(0,0,0,0.2),
+  0px 16px 24px 2px rgba(0,0,0,0.14),
+  0px 6px 30px 5px rgba(0,0,0,0.12)"
+
+20: "
+  0px 10px 13px -6px rgba(0,0,0,0.2),
+  0px 20px 31px 3px rgba(0,0,0,0.14),
+  0px 8px 38px 7px rgba(0,0,0,0.12)"
+
+24: "
+  0px 11px 15px -7px rgba(0,0,0,0.2),
+  0px 24px 38px 3px rgba(0,0,0,0.14),
+  0px 9px 46px 8px rgba(0,0,0,0.12)"
+*/
+
+@theme {
+  /* Shadows */
+  --shadow-color: var(--color-black);
+  --shadow-color-12: rgb(from var(--shadow-color) r g b / 12%);
+  --shadow-color-14: rgb(from var(--shadow-color) r g b / 14%);
+  --shadow-color-20: rgb(from var(--shadow-color) r g b / 20%);
+  /*
+  --shadow-xl: 16;
+  --shadow-2xl: 18;
+  --shadow-3xl: 24;
+  */
+  --shadow-xs: 0 var(--spacing-0_5) var(--spacing-px) calc(var(--spacing-px) * -1) var(--shadow-color-20),
+    0 var(--spacing-px) var(--spacing-px) 0 var(--shadow-color-14),
+    0 var(--spacing-px) 3px 0 var(--shadow-color-12);
+
+  --shadow-sm: 0 3px 3px calc(var(--spacing-0_5) * -1) var(--shadow-color-20),
+    0 3px var(--spacing-1) 0 var(--shadow-color-14),
+    0 var(--spacing-px) var(--spacing-2) 0 var(--shadow-color-12);
+
+  --shadow: 0 3px 5px calc(var(--spacing-px) * -1) var(--shadow-color-20),
+    0 var(--spacing-1_5) var(--spacing-2_5) 0 var(--shadow-color-14),
+    0 var(--spacing-px) 1.125rem 0 var(--shadow-color-12);
+
+  --shadow-md: 0 5px 5px -3px var(--shadow-color-20),
+    0 8px 10px 1px var(--shadow-color-14),
+    0 3px 14px 2px var(--shadow-color-12);
+
+  --shadow-lg: 0 7px 8px -4px var(--shadow-color-20),
+    0 12px 17px 2px var(--shadow-color-14),
+    0 5px 22px 4px var(--shadow-color-12);
+
+  --shadow-xl: 0 8px 10px -5px var(--shadow-color-20),
+    0 16px 24px 2px var(--shadow-color-14),
+    0 6px 30px 5px var(--shadow-color-12);
+
+  --shadow-2xl: 0 10px 13px -6px var(--shadow-color-20),
+    0 20px 31px 3px var(--shadow-color-14),
+    0 8px 38px 7px var(--shadow-color-12);
+
+  --shadow-3xl: 0 11px 15px -7px var(--shadow-color-20),
+    0 24px 38px 3px var(--shadow-color-14),
+    0 9px 46px 8px var(--shadow-color-12);
 }

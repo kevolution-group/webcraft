@@ -4,11 +4,13 @@ import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import tailwindcss from '@tailwindcss/vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     react(),
     libInjectCss(),
     dts({ include: ['lib'] })
@@ -20,7 +22,7 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime'],
+      external: ['react', 'react/jsx-runtime', 'tailwindcss'],
       input: Object.fromEntries(
         glob.sync(['lib/**/*.{ts,tsx}', 'lib/webcraft.css'], {
           ignore: ["lib/**/*.d.ts"],
