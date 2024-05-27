@@ -1,3 +1,3 @@
-export { Button } from './elements/button/Button'
-export { Input } from './elements/input/Input'
-export { Label } from './elements/label/Label'
+export * from './tailwind'
+export * from './ui'
+export * from './utils'

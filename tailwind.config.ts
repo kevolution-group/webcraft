@@ -1,14 +1,14 @@
-import { plugins } from "./.eslintrc.cjs";
+import { Config } from 'tailwindcss';
+import { tailwindTheme, tailwindPlugins } from './lib/tailwind';
 
-/** @type {import('tailwindcss').config} */
 export default {
+  darkMode: ['class'],
   content: [
     './index.html',
     './src/**/*.{ts,tsx}',
     './lib/**/*.{ts,tsx}'
   ],
-  theme: {
-    extends: {}
-  },
-  plugins: []
-}
+  prefix: '',
+  theme: tailwindTheme,
+  plugins: tailwindPlugins,
+} satisfies Config
