@@ -1,16 +1,23 @@
 {
   "name": "@kevolution/webcraft",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist/*"
+    "dist"
   ],
   "sideEffects": [
     "**/*.css"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./ui": "./dist/ui/index.js",
+    "./tailwind": "./dist/tailwind.js",
+    "./utils": "./dist/utils.js",
+    "./webcraft.css": "./dist/css/webcraft.css"
+  },
   "scripts": {
     "build": "pnpm run clear:dist && pnpm run tsc && vite build -c vite.config-lib.ts",
     "build:docs": "pnpm run clear:dist && pnpm run tsc:docs && vite build -c vite.config.ts",
